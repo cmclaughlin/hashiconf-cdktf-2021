@@ -1,0 +1,8 @@
+dev: {}
+qa: {}
+prod: {}
+
+ops:
+  regions:
+    us-east-1:
+      vpc_name: SS-OPS-1
