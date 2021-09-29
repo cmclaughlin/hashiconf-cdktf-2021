@@ -33,3 +33,7 @@ apply:
 .PHONY: ops
 ops: ENV=ops
 ops: clean synth apply
+
+.PHONY: dev
+dev: ENV=dev
+dev: clean synth apply

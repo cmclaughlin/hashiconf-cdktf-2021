@@ -1,8 +1,13 @@
-dev: {}
-qa: {}
-prod: {}
+# Example global configuration file
+# Stacks can also have local config.yaml for over-rides and stack specific
+# settings.
 
 ops:
   regions:
     us-east-1:
       vpc_name: SS-OPS-1
+
+dev:
+  regions:
+    us-east-1:
+      vpc_name: SS-DEV-1

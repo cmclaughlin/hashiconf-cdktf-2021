@@ -1,0 +1,4 @@
+cdktf>=0.3.0
+cdktf-cdktf-provider-aws>=1.0.64
+-e ../../lib/example_cdktf_env
+-e ../../lib/example_s3
