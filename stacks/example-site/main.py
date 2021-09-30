@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Example static site hosted on CloudFront/S3
+Example static site hosted on S3
 """
 
 from constructs import Construct
