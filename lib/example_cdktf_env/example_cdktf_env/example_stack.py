@@ -16,7 +16,7 @@ from botocore.exceptions import ClientError
 
 
 # The name of your S3 bucket for state files and DynamoDB table for locking
-STATE_NAME = "hashiconf-2021-cdktf-cmclaughlin"
+STATE_NAME = "hashiconf-2021-cmclaughlin"
 
 
 class ExampleStack(TerraformStack):

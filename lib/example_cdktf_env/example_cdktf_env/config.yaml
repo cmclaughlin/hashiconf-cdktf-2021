@@ -2,12 +2,17 @@
 # Stacks can also have local config.yaml for over-rides and stack specific
 # settings.
 
-ops:
-  regions:
-    us-east-1:
-      vpc_name: SS-OPS-1
-
 dev:
   regions:
     us-east-1:
-      vpc_name: SS-DEV-1
+      vpc_name: example-dev-vpc
+
+qa:
+  regions:
+    us-east-1:
+      vpc_name: example-qa-vpc
+
+prod:
+  regions:
+    us-east-1:
+      vpc_name: example-prod-vpc
