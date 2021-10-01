@@ -26,6 +26,7 @@ from example_cdktf_env.example_stack import STATE_NAME
 
 from cdktf import TerraformStack
 
+
 class MyStack(TerraformStack):
     """
     cdktf-state
@@ -34,7 +35,7 @@ class MyStack(TerraformStack):
     def __init__(self, scope: Construct, ns: str):
 
         super().__init__(scope, ns)
-        AwsProvider(self, 'Aws', region='us-east-1')
+        AwsProvider(self, "Aws", region="us-east-1")
 
         # Uncomment after creating state/switching base class to ExampleStack
         # and deleting the AwsProvider
@@ -74,7 +75,7 @@ class MyStack(TerraformStack):
             name=self.name,
             attribute=attribute,
             hash_key="LockID",
-            billing_mode="PAY_PER_REQUEST"
+            billing_mode="PAY_PER_REQUEST",
         )
 
 
