@@ -9,7 +9,7 @@ There's a chicken/egg problem of sorts here... we need to create
 the resources before using them for state management. Therefore,
 this stack uses local state. After the initial creation, it can
 be switched to inherit from ExampleStack and the previously/locally
-created resources can be imported.
+created resources can be imported if desired.
 """
 
 from cdktf_cdktf_provider_aws import (
@@ -21,7 +21,12 @@ from cdktf_cdktf_provider_aws import (
     S3BucketVersioning,
 )
 from constructs import Construct
-from example_cdktf_env import ExampleApp, ExampleStack
+
+from cdktf import App
+
+# Uncomment for inheritance
+# from example_cdktf_env import ExampleApp, ExampleStack
+
 from example_cdktf_env.example_stack import STATE_NAME
 
 from cdktf import TerraformStack
@@ -57,7 +62,7 @@ class MyStack(TerraformStack):
 
         S3BucketPublicAccessBlock(
             self,
-            id=f"self.name-public-access-block",
+            id=f"{self.name}-public-access-block",
             bucket=self.name,
             block_public_acls=True,
             block_public_policy=True,
@@ -80,8 +85,13 @@ class MyStack(TerraformStack):
 
 
 if __name__ == "__main__":
-    app = ExampleApp()
+    # Uncomment for inheritance
+    # app = ExampleApp()
+    app = App()
+
     stack = MyStack(app, "cdk-state")
+
     # Uncomment after creating state/switching base class to ExampleStack
     # stack.restrict_env(["ops"])
+
     app.synth()
