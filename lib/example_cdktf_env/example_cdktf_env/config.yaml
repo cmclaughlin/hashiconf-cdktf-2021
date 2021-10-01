@@ -16,3 +16,8 @@ prod:
   regions:
     us-east-1:
       vpc_name: example-prod-vpc
+
+ops:
+  regions:
+    us-east-1:
+      vpc_name: example-ops-vpc
