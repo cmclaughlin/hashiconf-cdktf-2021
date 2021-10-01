@@ -1,8 +1,13 @@
-## Getting Started With CDK for Terraform - HashiConf 2021
+# Getting Started With CDK for Terraform - HashiConf 2021
 
 This repo contains a couple reusable libraries and example stacks
-that highlight cdktf features and patterns. There's a top-level Makefile
-with the following features:
+that highlight CDKTF features and patterns.
+
+## Utilities
+
+cdktf-cli supports creating stacks based on a variety of built-in templates.
+Support for creating stacks based on remote templates was also added recently,
+but I have some convenient Makefile commands for these common operations.
 
 ### Stack Creation
 
