@@ -25,9 +25,9 @@ from constructs import Construct
 
 from cdktf import App
 
-from example_cdktf_env.example_stack import STATE_NAME
-
 from cdktf import TerraformStack
+
+from example_cdktf_env.example_stack import STATE_NAME
 
 
 class MyStack(TerraformStack):
