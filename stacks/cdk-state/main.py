@@ -9,7 +9,8 @@ There's a chicken/egg problem of sorts here... we need to create
 the resources before using them for state management. Therefore,
 this stack uses local state. After the initial creation, it can
 be switched to inherit from ExampleStack and the previously/locally
-created resources can be imported if desired.
+created resources can be imported if desired. See the example-site
+stack for an example of inheritance.
 """
 
 from cdktf_cdktf_provider_aws import (
@@ -23,9 +24,6 @@ from cdktf_cdktf_provider_aws import (
 from constructs import Construct
 
 from cdktf import App
-
-# Uncomment for inheritance
-# from example_cdktf_env import ExampleApp, ExampleStack
 
 from example_cdktf_env.example_stack import STATE_NAME
 
@@ -42,11 +40,8 @@ class MyStack(TerraformStack):
         super().__init__(scope, ns)
         AwsProvider(self, "Aws", region="us-east-1")
 
-        # Uncomment after creating state/switching base class to ExampleStack
-        # and deleting the AwsProvider
-        # super().__init__(scope, ns, AwsProvider)
-
         self.name = STATE_NAME
+
         self.s3()
         self.dynamodb()
 
@@ -85,13 +80,6 @@ class MyStack(TerraformStack):
 
 
 if __name__ == "__main__":
-    # Uncomment for inheritance
-    # app = ExampleApp()
     app = App()
-
     stack = MyStack(app, "cdk-state")
-
-    # Uncomment after creating state/switching base class to ExampleStack
-    # stack.restrict_env(["ops"])
-
     app.synth()
