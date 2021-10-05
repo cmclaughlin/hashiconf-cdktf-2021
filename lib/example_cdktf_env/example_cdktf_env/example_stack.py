@@ -39,7 +39,7 @@ class ExampleStack(TerraformStack):
         # to ensure it's really unique accross all our deployments.
         self.ns_uniq = f"{ns}-{self.env.name}-{self.region}"
 
-        # Init the parrent class
+        # Init the parent class
         super().__init__(scope, self.ns_uniq)
 
         # Data lookups
