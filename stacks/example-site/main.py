@@ -5,11 +5,12 @@ Example static site hosted on S3
 """
 
 from constructs import Construct
-from example_cdktf_env import ExampleApp, ExampleStack
 
 from cdktf_cdktf_provider_aws import AwsProvider, S3BucketWebsite, S3BucketObject
 
 from cdktf import TerraformOutput
+
+from example_cdktf_env import ExampleApp, ExampleStack
 
 from example_s3 import ExampleS3Bucket
 
