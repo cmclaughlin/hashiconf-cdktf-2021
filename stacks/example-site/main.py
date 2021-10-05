@@ -20,7 +20,7 @@ class MyStack(ExampleStack):
 
         super().__init__(scope, ns, AwsProvider)
 
-        bucket_name = f"cdktf-example-cmclaughlin-{self.env.name}"
+        bucket_name = f"hashiconf-cdktf-cmclaughlin-{self.env.name}"
         doc_name = "index.html"
 
         website = S3BucketWebsite(index_document=doc_name, error_document=doc_name)
