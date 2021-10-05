@@ -19,7 +19,7 @@ class MyStack(ExampleStack):
 
         super().__init__(scope, ns, AwsProvider)
 
-        bucket_name = "cdk-example-cmclaughlin"
+        bucket_name = f"cdktf-example-cmclaughlin-{self.env.name}"
         doc_name = "index.html"
 
         website = S3BucketWebsite(index_document=doc_name, error_document=doc_name)
@@ -37,7 +37,7 @@ class MyStack(ExampleStack):
             "upload",
             bucket=bucket_name,
             key=doc_name,
-            source=f"../../../index.html",
+            source="../../../index.html",
             acl="public-read",
             content_type="text/html",
             depends_on=[bucket.bucket],
